@@ -1,11 +1,12 @@
 let url = "https://type.fit/api/quotes";
+//inbuilt function to fetch API quotes
 fetch(url)
 .then(function (response) {
 	return response.json();
 })
 .then(function (data) {
 	let a = 0;
-
+//serch button function
 	let searchbtn = document.getElementById("searchbtn");
 	searchbtn.addEventListener("click", function () {
 	let countnum = document.getElementById("countnum");
@@ -14,7 +15,7 @@ fetch(url)
 	countnum.value = inputsearch.value;
 	displaythought(a, data);
 	});
-
+//next button function
 	let nextthought = document.getElementById("nextthought");
 	nextthought.addEventListener("click", function () {
 	let countnum = document.getElementById("countnum");
@@ -23,7 +24,7 @@ fetch(url)
 
 	displaythought(countnum.value, data);
 	});
-
+//previous button function
 	let previousthought = document.getElementById("previousthought");
 	previousthought.addEventListener("click", function () {
 	let countnum = document.getElementById("countnum");
@@ -40,7 +41,7 @@ fetch(url)
 
 	displaythought(0, data);
 });
-
+//function to display quotes
 function displaythought(index, data) {
 let thought = document.getElementById("thought");
 
